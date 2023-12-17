@@ -1,0 +1,68 @@
+# Hero captions
+hero-main-caption:
+  title: "France Data"
+  subtitle: "Atlas des données de France"
+###################################################
+
+#Page name
+page-name:
+  home: "home"
+  regions: "regions"
+###################################################
+
+#Regions de France
+regions:
+  Auvergne-Rhône-Alpes:
+    nom: 'Auvergne-Rhône-Alpes'
+    code: 'FR-ARA'
+  Bourgogne-Franche-Comté:
+    nom: 'Bourgogne-Franche-Comté'
+    code: 'FR-BFC'
+  Bretagne:
+    nom: 'Bretagne'
+    code: 'FR-BRE'
+  Centre-Val de Loire:
+    nom: 'Centre-Val de Loire'
+    code: 'FR-CVL'
+  Corse:
+    nom: 'Corse'
+    code: 'FR-COR'
+  Grand-Est:
+    nom: 'Grand-Est'
+    code: 'FR-GES'
+  Guadeloupe:
+    nom: 'Guadeloupe'
+    code: 'FR-GUA'
+  Guyane:
+    nom: 'Guyane'
+    code: 'FR-GUF'
+  Hauts-de-France:
+    nom: 'Hauts-de-France'
+    code: 'FR-HDF'
+  Île-de-France:
+    nom: 'Île-de-France'
+    code: 'FR-IDF'
+  La Réunion:
+    nom: 'La Réunion'
+    code: 'FR-LRE'
+  Martinique:
+    nom: 'Martinique'
+    code: 'FR-MTQ'
+  Mayotte:
+    nom: 'Mayotte'
+    code: 'FR-MAY'
+  Normandie:
+    nom: 'Normandie'
+    code: 'FR-NOR'
+  Nouvelle-Aquitaine:
+    nom: 'Nouvelle-Aquitaine'
+    code: 'FR-NAQ'
+  Occitanie:
+    nom: 'Occitanie'
+    code: 'FR-OCC'
+  Pays de la Loire:
+    nom: 'Pays de la Loire'
+    code: 'FR-PDL'
+  Provence-Alpes-Côte dAzur:
+    nom: 'Provence-Alpes-Côte dAzur'
+    code: 'FR-PAC'
