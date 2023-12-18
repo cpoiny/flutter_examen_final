@@ -14,55 +14,74 @@ page-name:
 regions:
   Auvergne-Rhône-Alpes:
     nom: 'Auvergne-Rhône-Alpes'
-    code: 'FR-ARA'
+    iso: 'FR-ARA'
+    code: '84'
   Bourgogne-Franche-Comté:
     nom: 'Bourgogne-Franche-Comté'
-    code: 'FR-BFC'
+    iso: 'FR-BFC'
+    code: '27'
   Bretagne:
     nom: 'Bretagne'
-    code: 'FR-BRE'
+    iso: 'FR-BRE'
+    code: '53'
   Centre-Val de Loire:
     nom: 'Centre-Val de Loire'
-    code: 'FR-CVL'
+    iso: 'FR-CVL'
+    code: '24'
   Corse:
     nom: 'Corse'
-    code: 'FR-COR'
+    iso: 'FR-COR'
+    code: '94'
   Grand-Est:
     nom: 'Grand-Est'
-    code: 'FR-GES'
+    iso: 'FR-GES'
+    code: '44'
   Guadeloupe:
     nom: 'Guadeloupe'
-    code: 'FR-GUA'
+    iso: 'FR-GUA'
+    code: '01'
   Guyane:
     nom: 'Guyane'
-    code: 'FR-GUF'
+    iso: 'FR-GUF'
+    code: '03'
   Hauts-de-France:
     nom: 'Hauts-de-France'
-    code: 'FR-HDF'
+    iso: 'FR-HDF'
+    code: '32'
   Île-de-France:
     nom: 'Île-de-France'
-    code: 'FR-IDF'
+    iso: 'FR-IDF'
+    code: '11'
   La Réunion:
     nom: 'La Réunion'
-    code: 'FR-LRE'
+    iso: 'FR-LRE'
+    code: '04'
   Martinique:
     nom: 'Martinique'
-    code: 'FR-MTQ'
+    iso: 'FR-MTQ'
+    code: '02'
   Mayotte:
     nom: 'Mayotte'
-    code: 'FR-MAY'
+    iso: 'FR-MAY'
+    code: '06'
   Normandie:
     nom: 'Normandie'
-    code: 'FR-NOR'
+    iso: 'FR-NOR'
+    code: '28'
   Nouvelle-Aquitaine:
     nom: 'Nouvelle-Aquitaine'
-    code: 'FR-NAQ'
+    iso: 'FR-NAQ'
+    code: '75'
   Occitanie:
     nom: 'Occitanie'
-    code: 'FR-OCC'
+    iso: 'FR-OCC'
+    code: '76'
   Pays de la Loire:
     nom: 'Pays de la Loire'
-    code: 'FR-PDL'
+    iso: 'FR-PDL'
+    num: '52'
   Provence-Alpes-Côte dAzur:
     nom: 'Provence-Alpes-Côte dAzur'
-    code: 'FR-PAC'
+    iso: 'FR-PAC'
+    code: '93'
+###################################################

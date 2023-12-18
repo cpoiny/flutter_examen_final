@@ -150,7 +150,7 @@ class _SearchBarAppState extends State<SearchBarApp> {
                 itemCount: filteredItems.length,
                 itemBuilder: (context, index) {
                   return GestureDetector(
-                    onTap: () {
+                    onTapDown: (detail) {
                       updateSearchQuery(filteredItems[index]);
                     },
                     child: Container(
@@ -183,7 +183,7 @@ class _SearchBarAppState extends State<SearchBarApp> {
                 itemCount: searchresults.length,
                 itemBuilder: (context, index) {
                   return GestureDetector(
-                    onTap: () {
+                    onTapDown: (detail) {
                       updateSearchQuery(searchresults[index]);
                     },
                     child: Container(

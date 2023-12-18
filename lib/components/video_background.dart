@@ -8,10 +8,10 @@ class VideoApp extends StatefulWidget {
   const VideoApp({super.key});
 
   @override
-  _VideoAppState createState() => _VideoAppState();
+  VideoAppState createState() => VideoAppState();
 }
 
-class _VideoAppState extends State<VideoApp> {
+class VideoAppState extends State<VideoApp> {
   late VideoPlayerController _controller;
 
   @override
