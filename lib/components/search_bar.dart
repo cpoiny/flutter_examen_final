@@ -51,10 +51,9 @@ class _SearchBarAppState extends State<SearchBarApp> {
   }
 
   void updateSearchQuery(value) {
-    setState(() {
-      _searchController.text = value;
-    });
+    _searchController.text = value;
   }
+  
 
   void setRegions(YamlMap regions) {
     if(searchresults.isEmpty) {
@@ -90,7 +89,7 @@ class _SearchBarAppState extends State<SearchBarApp> {
                       EdgeInsets.symmetric(horizontal: 16.0)),
                   onSubmitted: (value) {
                     // print("Submitting $value");
-                    // print(value);
+                    print(value);
                   },
                   onChanged: (value) {
                     search(value);
