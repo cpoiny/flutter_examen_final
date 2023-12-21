@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_examen1/components/config.dart';
+import 'package:flutter_examen1/models/communes_model.dart';
 import 'package:flutter_examen1/models/departement_model.dart';
 import 'package:flutter_examen1/pages/communes_page.dart';
+import 'package:flutter_examen1/service/commune_service.dart';
 import 'package:flutter_examen1/service/department_service.dart';
 
 
@@ -9,8 +11,8 @@ import 'package:flutter_examen1/service/department_service.dart';
 
 // 5 - Créer le composant stateful permettant l'utilisation des models 
 
-class DepartmentsLister extends StatefulWidget {
-  const DepartmentsLister({super.key,
+class CommunesLister extends StatefulWidget {
+  const CommunesLister({super.key,
   required this.codeRegion,
   required this.config});
 
@@ -19,25 +21,25 @@ class DepartmentsLister extends StatefulWidget {
   final Config config;
 
   @override
-  State<DepartmentsLister> createState() => _DepartmentsListerState();
+  State<CommunesLister> createState() => _CommunesListerState();
 }
 
-class _DepartmentsListerState extends State<DepartmentsLister> {
+class _CommunesListerState extends State<CommunesLister> {
 
 //Données dont on a besoin
-late Future<DepartmentList?> departements;
+late Future<CommunesList?> communes;
 
 // Methode init()
 @override
 void initState(){
   super.initState();
-  loadDepartments(widget.codeRegion);
+  loadCommunes(widget.codeRegion);
 }
 
-void loadDepartments(codeRegion){
+void loadCommunes(codeRegion){
   setState((){
     // on peut appeler notre ProductService et notre methode car ils sont en static dans la classe donc accessible ici
-  departements = DepartmentService.getDepartments(codeRegion);
+  communes = CommuneService.getCommunes(codeRegion);
   });
 }
 
@@ -49,41 +51,27 @@ void loadDepartments(codeRegion){
 
     // Widget FutureBuilder => pour afficher des données
     return FutureBuilder(
-      future: departements, 
+      future: communes, 
       builder: (context, snapshot){
         // les données sont arrivées sans erreur
         if(snapshot.hasData){
-          List<Department> departements = snapshot.data!.departements;
+          List<Communes> communes = snapshot.data!.communes;
           return ListView.builder(
-            itemCount: snapshot.data!.departements.length,
+            itemCount: snapshot.data!.communes.length,
             itemBuilder: (context, index){
-              Department departement = departements[index];
+              Communes commune = communes[index];
               return Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: GestureDetector(
-                  onTapDown: (value){
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                    builder: (context) =>
-                      CommunesPage(config: widget.config,
-                      title: "Recherche du departement: ${departement.nom}",
-                      codeRegion: departement.code,
-                      
-                      ),
-                    ),
-                );
-          
-                  },
+                
                   child: Card(
                     // You can customize Card properties here
                     child: ListTile(
-                      title: Text(departement.nom),
+                      title: Text(commune.nom),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Code du departement : ${departement.code}"),
-                          Text("La région ${departement.nom}(${departement.code} compte xx departements)")
+                          Text("Population : ${commune.population}"),
+                          Text("Code Postal ${commune.code}"),
                         ],
                       ),
                       // You can handle onTap here
@@ -93,8 +81,10 @@ void loadDepartments(codeRegion){
                       },
                     ),
                   ),
-                ),
               );
+            
+                
+              
             }
           );
 

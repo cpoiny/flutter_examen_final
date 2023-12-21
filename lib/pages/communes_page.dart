@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_examen1/components/communesLister.dart';
 import 'package:flutter_examen1/components/config.dart';
 import 'package:flutter_examen1/components/departmentsLister.dart';
-import 'package:flutter_examen1/components/search_bar.dart';
 import 'package:flutter_examen1/components/sliding_menu.dart';
-import 'package:flutter_examen1/components/svg_map.dart';
 
-class DepartementsPage extends StatelessWidget {
- const DepartementsPage({super.key, 
+
+class CommunesPage extends StatelessWidget {
+ const CommunesPage({super.key, 
  required this.title,
  required this.config,
- required this.region
+ required this.codeRegion
+ //required this.departement
  });
 
 final Config config;
 final String title;
-final String region;
+final String codeRegion;
+//final String departement;
 
   @override
   Widget build(BuildContext context) {
-    final String codeRegion;
-    codeRegion = config.get('regions.$region.code');
+    // final String codeRegion;
+    // codeRegion = config.get('regions.$region.code');
 
 
 
@@ -44,7 +46,7 @@ final String region;
               child: Padding(
                 padding:const EdgeInsets.only(left: 40.0),
                 child: Center(
-                  child: DepartmentsLister(config: config, codeRegion: codeRegion),
+                  child: CommunesLister(config: config, codeRegion: codeRegion),
                 ),
               ),
               
@@ -52,9 +54,6 @@ final String region;
           
           ],
         )
-      
-      
-      
     );
   }
 }
