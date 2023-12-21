@@ -7,6 +7,7 @@ class SearchBarApp extends StatefulWidget {
 
   final Config config;
 
+
   @override
   State<SearchBarApp> createState() => _SearchBarAppState();
 }
@@ -52,6 +53,11 @@ class _SearchBarAppState extends State<SearchBarApp> {
 
   void updateSearchQuery(value) {
     _searchController.text = value;
+
+    // ajout de la methode requestFocus() sur le searBarHasFocus (de type Node)
+    searchBarHasFocus.requestFocus();
+    // on appelle la méthode search()
+    search(value);
   }
   
 
@@ -88,6 +94,7 @@ class _SearchBarAppState extends State<SearchBarApp> {
                   padding: const MaterialStatePropertyAll<EdgeInsets>(
                       EdgeInsets.symmetric(horizontal: 16.0)),
                   onSubmitted: (value) {
+                    
                     // print("Submitting $value");
                     print(value);
                   },
