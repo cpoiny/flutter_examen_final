@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_examen1/components/communesLister.dart';
 import 'package:flutter_examen1/components/config.dart';
-import 'package:flutter_examen1/components/departmentsLister.dart';
 import 'package:flutter_examen1/components/sliding_menu.dart';
 
 

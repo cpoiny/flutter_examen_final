@@ -26,11 +26,13 @@ class CommuneService {
  static Future<CommunesList?> getCommunes(String code) async {
 
  String communesUrl = "https://geo.api.gouv.fr/departements/$code/communes";
+ 
     try {
       final response = await http
           .get(Uri.parse(communesUrl), headers: {"Accept": "application/json"});
 
       if (response.statusCode == 200) {
+        print(communesUrl);
         //succès de l'appli call
         if (response.body.isNotEmpty) {
           final jsonResponse = json.decode(response.body);

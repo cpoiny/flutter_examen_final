@@ -44,7 +44,7 @@ final String region;
               child: Padding(
                 padding:const EdgeInsets.only(left: 40.0),
                 child: Center(
-                  child: DepartmentsLister(config: config, codeRegion: codeRegion),
+                  child: DepartmentsLister(config: config, codeRegion: codeRegion, region: region),
                 ),
               ),
               

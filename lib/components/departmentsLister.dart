@@ -12,11 +12,13 @@ import 'package:flutter_examen1/service/department_service.dart';
 class DepartmentsLister extends StatefulWidget {
   const DepartmentsLister({super.key,
   required this.codeRegion,
-  required this.config});
+  required this.config,
+  required this.region});
 
 
   final String codeRegion;
   final Config config;
+  final String region;
 
   @override
   State<DepartmentsLister> createState() => _DepartmentsListerState();
@@ -36,7 +38,7 @@ void initState(){
 
 void loadDepartments(codeRegion){
   setState((){
-    // on peut appeler notre ProductService et notre methode car ils sont en static dans la classe donc accessible ici
+    // on peut appeler notre DepartmentService et notre methode car ils sont en static dans la classe donc accessible ici
   departements = DepartmentService.getDepartments(codeRegion);
   });
 }
@@ -54,48 +56,63 @@ void loadDepartments(codeRegion){
         // les données sont arrivées sans erreur
         if(snapshot.hasData){
           List<Department> departements = snapshot.data!.departements;
-          return ListView.builder(
-            itemCount: snapshot.data!.departements.length,
-            itemBuilder: (context, index){
-              Department departement = departements[index];
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: GestureDetector(
-                  onTapDown: (value){
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                    builder: (context) =>
-                      CommunesPage(config: widget.config,
-                      title: "Recherche du departement: ${departement.nom}",
-                      codeRegion: departement.code,
-                      
-                      ),
-                    ),
-                );
-          
-                  },
-                  child: Card(
-                    // You can customize Card properties here
-                    child: ListTile(
-                      title: Text(departement.nom),
-                      subtitle: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Code du departement : ${departement.code}"),
-                          Text("La région ${departement.nom}(${departement.code} compte xx departements)")
-                        ],
-                      ),
-                      // You can handle onTap here
-                      //attention si on utilise Chrome on doit mettre onTapDown() dans un gestureDetector pour encadrer ma card car Chrome ne gere pas onTap
-                      onTap: () {
-                        // Add your onTap logic
+          return 
+          Column(
+            children:<Widget>[
+              SizedBox(
+
+             child: Text(
+              "La région ${widget.region} (${widget.codeRegion}) compte ${departements.length} départements. \n Cliquez sur l'un des départements pour en savoir plus...",
+              style: const TextStyle(
+                fontWeight: FontWeight.w900
+              ),
+             ),
+             ),
+              
+              Expanded(
+              child: ListView.builder(
+                itemCount: snapshot.data!.departements.length,
+                itemBuilder: (context, index){
+                  Department departement = departements[index];
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: GestureDetector(
+                      onTapDown: (value){
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                        builder: (context) =>
+                          CommunesPage(config: widget.config,
+                          title: "Recherche du departement: ${departement.nom}",
+                          codeRegion: departement.code,
+                          ),
+                        ),
+                    );
+              
                       },
+                      child: Card(
+                        // You can customize Card properties here
+                        child: ListTile(
+                          title: Text(departement.nom),
+                          subtitle: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Code du departement : ${departement.code}"),
+                            ],
+                          ),
+                          // You can handle onTap here
+                          //attention si on utilise Chrome on doit mettre onTapDown() dans un gestureDetector pour encadrer ma card car Chrome ne gere pas onTap
+                          onTap: () {
+                            // Add your onTap logic
+                          },
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-              );
-            }
+                  );
+                }
+              ),
+            ),
+            ],
           );
 
 
