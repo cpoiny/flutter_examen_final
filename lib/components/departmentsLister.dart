@@ -60,7 +60,7 @@ void loadDepartments(codeRegion){
           Column(
             children:<Widget>[
               SizedBox(
-
+                height: 50,
              child: Text(
               "La région ${widget.region} (${widget.codeRegion}) compte ${departements.length} départements. \n Cliquez sur l'un des départements pour en savoir plus...",
               style: const TextStyle(
@@ -76,7 +76,7 @@ void loadDepartments(codeRegion){
                   Department departement = departements[index];
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: GestureDetector(
+                    child: InkWell(
                       onTapDown: (value){
                         Navigator.push(
                         context,

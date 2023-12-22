@@ -43,7 +43,7 @@ final String codeRegion;
             
             Expanded(
               child: Padding(
-                padding:const EdgeInsets.only(left: 40.0),
+                padding:const EdgeInsets.all(5),
                 child: Center(
                   child: CommunesLister(config: config, codeRegion: codeRegion),
                 ),

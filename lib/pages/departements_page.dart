@@ -39,10 +39,9 @@ final String region;
       body: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            
             Expanded(
               child: Padding(
-                padding:const EdgeInsets.only(left: 40.0),
+                padding:const EdgeInsets.fromLTRB(0, 5, 0, 5),
                 child: Center(
                   child: DepartmentsLister(config: config, codeRegion: codeRegion, region: region),
                 ),

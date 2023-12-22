@@ -46,7 +46,7 @@ class _CommunesListerState extends State<CommunesLister> {
             return Column(
               children: <Widget>[
                 SizedBox(
-                  height: 15,
+                  height: 50,
                   child: Text(
                     "Le département  (${widget.codeRegion}) compte ${communes.length} communes. \n Cliquez sur l'une des communes pour en savoir plus...",
                     style: const TextStyle(fontWeight: FontWeight.w900),
@@ -75,8 +75,7 @@ class _CommunesListerState extends State<CommunesLister> {
                               onTap: () {
                                 showDialog(
                                   context: context,
-                                  builder: (BuildContext context) =>
-                                      AlertDialog(
+                                  builder: (BuildContext context) => AlertDialog(
                                     title: const Text('Détails de la commune'),
                                     content: Text('Nom : ${commune.nom} \n'
                                         'Code: ${commune.code}\n'
