@@ -58,16 +58,20 @@ void loadDepartments(codeRegion){
           List<Department> departements = snapshot.data!.departements;
           return 
           Column(
+          //  mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children:<Widget>[
-              SizedBox(
-                height: 50,
-             child: Text(
-              "La région ${widget.region} (${widget.codeRegion}) compte ${departements.length} départements. \n Cliquez sur l'un des départements pour en savoir plus...",
-              style: const TextStyle(
-                fontWeight: FontWeight.w900
+                Container(
+                  color: Colors.blue[200],
+                  padding: const EdgeInsets.fromLTRB(20, 8, 10, 8),
+                  child:  Text(
+                "La région ${widget.region} (${widget.codeRegion}) compte ${departements.length} départements.\nCliquez sur l'un des départements pour en savoir plus...",
+                style:  const TextStyle(
+                  fontWeight: FontWeight.w900
+                ),
               ),
-             ),
-             ),
+            ),
+             
               
               Expanded(
               child: ListView.builder(
